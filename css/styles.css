@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1rem auto;
+  background-color: #6bb89f;
+  width: 80%;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8 rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container__title {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: #0d2248;
+  margin-bottom: 2rem;
+}
+
+.container__title__sub {
+  font-size: 1.5rem;
+  color: #acda73;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* ******************* */
+/* *** Ejercicio 1 *** */
+/* ******************* */
+.container__loading {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: 5px solid rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  border-top-color: #5b90f2;
+  border-bottom-color: #5b90f2;
+  animation: 2s spinning-lines infinite ease-in-out;
+}
+
+@keyframes spinning-lines {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ******************* */
+/* *** Ejercicio 2 *** */
+/* ******************* */
+.container__cards {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.container__cards__card {
+  display: flex;
+  align-items: center;
+  background-color: #0d2248;
+  color: #acda73;
+  font-size: 2rem;
+  padding: 1rem;
+  width: 300px;
+  height: 300px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 4rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, border-radius 0.3s;
+}
+
+.container__cards .container__cards__card:nth-child(2) {
+  animation: pulseAnimation 3s linear infinite alternate;
+}
+
+@keyframes pulseAnimation {
+  from {
+    transform: scale(1);
+    background-color: #0d2248;
+    color: #acda73;
+  }
+  to {
+    transform: scale(1.1);
+    background-color: #acda73;
+    color: #0d2248;
+    border-radius: 2rem;
+  }
+}
+
+.container__cards .container__cards__card:hover {
+  transform: scale(1.1);
+  background-color: #acda73;
+  color: #0d2248;
+  border-radius: 2rem;
+}
+
+/* ******************* */
+/* *** Ejercicio 3 *** */
+/* ******************* */
+.container__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.container__login__form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 50%;
+}
+
+.container__login__form__title {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  padding-left: 1rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  background-color: #acda73;
+  color: #0d2248;
+  font-size: 2rem;
+}
+
+.container__login__form__label {
+  display: flex;
+  align-self: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #acda73;
+}
+
+.container__login__form__text {
+  display: flex;
+  align-self: center;
+  border: none;
+  border-bottom: 1px solid #0d2248;
+  background-color: rgba(0, 0, 0, 0);
+  width: 300px;
+  height: 3rem;
+  margin: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
+}
+
+.container__login__form__text:focus,
+.container__login__form__text:hover {
+  border: none;
+  background-color: #5b90f2;
+  border-radius: 2rem;
+  color: #acda73;
+}
+
+.container__login__form__button {
+  align-self: center;
+  margin-top: 1rem;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0d2248;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #acda73;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.479);
+  transition: transform 0.3s, color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.container__login__form__button:hover,
+.container__login__form__button:focus {
+  background-color: #5b90f2;
+  color: #0d2248;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.479);
+}
+
+.container__login__form__button:active {
+  background-color: #acda73;
+  color: #0d2248;
+}
+
+.container__login__socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 5rem;
+}
+
+.container__login__socials__icon:link,
+.container__login__socials__icon:visited,
+.container__login__socials__icon:active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  color: #acda73;
+  font-size: 3rem;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.5s, background-color 0.5s, color 0.5s;
+}
+
+.container__login__socials__icon:hover {
+  transform: scale(1.2);
+  background-color: #acda73;
+  color: #0d2248;
+  border-radius: 50%;
+}
+
+/* ******************* */
+/* *** Ejercicio 4 *** */
+/* ******************* */
+.container__presentation {
+  width: 300px;
+  border: 5px solid #341509;
+  margin: 30px auto 0;
+  padding: 10px;
+  color: #341509;
+  background-color: #acda73;
+  border-radius: 2rem;
+  transition: box-shadow 0.5s;
+}
+
+.container__presentation:hover {
+  box-shadow: 10px 10px 2px rgba(0, 0, 0, 0.336);
+  width: 300px;
+  border: 5px solid #341509;
+  margin: 30px auto 0;
+  padding: 10px;
+  color: #341509;
+  background-color: #acda73;
+  border-radius: 2rem;
+}
+
+.container__presentation_profile__image {
+  background-image: url("../img/img_perfil.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: scale(0.5s) ease-in-out;
+ 
+}
+
+.container__presentation_profile__image:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+
+.container__presentation_profile__title {
+  margin-top: 1rem;
+  font-size: 2rem;
+  transition: transform 0.5s, color 0.5s, background 0.5s;
+  border-radius: 2rem;
+}
+
+.container__presentation_profile__title:hover {
+  transform: scale(1.1);
+  color: #0d2248;
+  background-color: #0d224865;
+  border-radius: 2rem;
+
+}
+
+.container__presentation_profile__info__job {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  transition: transform 0.5s, color 0.5s;
+}
+
+.container__presentation_profile__info__job:hover {
+  transform: scale(1.1);
+  color: #5b90f2;
+}
+
+.container__presentation_profile__info__description {
+  margin-top: 1rem;
+  transition: transform 0.5s;
+}
+
+.container__presentation_profile__info__description:hover {
+  transform: scale(1.1);
+}
+
+.container__presentation__socials {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  height: 5rem;
+}
+
+.container__presentation__socials__icon:link,
+.container__presentation__socials__icon:visited,
+.container__presentation__socials__icon:active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  color: #341509;
+  font-size: 3rem;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.5s, background-color 0.5s, color 0.5s;
+}
+
+.container__presentation__socials__icon:hover {
+  transform: scale(1.2);
+  color: #a22c02;
+  background-color: #0d2248;
+  border-radius: 50%;
+}
